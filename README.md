@@ -1,6 +1,19 @@
 # CookieBot
 An opensource, NodeJS/Discord.js/BananenBase cookie bot with many cool features!
 
+## Setup
+Setting up this cookiebot is really easy! Here are the steps.
+
+1. If you don't have NodeJS: Click [here](https://nodejs.org/) to download and install nodejs.
+
+2. Download the latest release [here](soon!).
+
+3. Unpack the zip file in a directory that you like.
+
+4. Run `npm install` to install the required packages and paste your bot token from [here](https://discordapp.com/developers) in [src/bot.js](/src/bot.js) on line `4`.
+
+5. Run `npm start` to start the bot!
+
 ## License
 Click [here](/LICENSE) to view the license.
 

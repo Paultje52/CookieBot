@@ -1,0 +1,30 @@
+{
+  "name": "cookiebot",
+  "version": "1.0.0",
+  "description": "An opensource, NodeJS/Discord.js/BananenBase cookie bot with many cool features!",
+  "main": "src/bot.js",
+  "scripts": {
+    "test": "cd src && node bot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paultje52/CookieBot.git"
+  },
+  "keywords": [
+    "cookiebot",
+    "bananenbase",
+    "nodejs",
+    "discord.js"
+  ],
+  "author": "Paultje",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Paultje52/CookieBot/issues"
+  },
+  "homepage": "https://github.com/Paultje52/CookieBot#readme",
+  "dependencies": {
+    "@keyv/sqlite": "^2.0.2",
+    "bananenbase": "^3.2.12",
+    "keyv": "^4.0.0"
+  }
+}

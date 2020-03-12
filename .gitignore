@@ -1,5 +1,6 @@
 # Database
 database.json
+configstore.json
 database.sqlite
 
 # Logs
