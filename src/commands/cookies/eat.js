@@ -11,10 +11,11 @@ module.exports = class eat extends command {
   }
 
   async run(message) {
+    if (!message.author.settings.cookies || !message.author.settings.last) message.author.settings = this.client.config.authorSettings;
     if (message.author.settings.last.eat && message.author.settings.last.eat > Date.now() && Math.round((message.author.settings.last.eat-Date.now())/1000/60) >= 1) return message.channel.send(`Please wait ${Math.round((message.author.settings.last.eat-Date.now())/1000/60)} minutes before eating again!`);
     if (message.author.settings.cookies < 1) return message.error(`You need at least one cookie to eat. You can search for cookies with \`${message.guild.settings.prefix}search\`.`);
     message.author.settings.cookies--;
-    message.author.settings.last.eat = Date.now()+1000*60*5;
+    message.author.settings.last.eat = Date.now()+1000*60*15;
     this.client.db.set(message.author.dbId, message.author.settings);
     let msg = await message.channel.send("Eating");
     await wait(1000);

@@ -12,6 +12,7 @@ module.exports = class steal extends command {
   }
 
   async run(message, args) {
+    if (!message.author.settings.cookies || !message.author.settings.last) message.author.settings = this.client.config.authorSettings;
     if (message.author.settings.last.steal && message.author.settings.last.steal > Date.now() && Math.round((message.author.settings.last.steal-Date.now())/1000/60) >= 1) return message.channel.send(`Please wait ${Math.round((message.author.settings.last.steal-Date.now())/1000/60)} minutes before stealing again!`);
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if (!member) return message.error(`Invalid use of the command! Use \`${message.guild.settings.prefix}steal <@member>\``);

@@ -1,6 +1,6 @@
 module.exports = {
   authorSettings: {
-    cookies: 0,
+    cookies: 5,
     last: {}
   },
   guildSettings: {

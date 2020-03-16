@@ -12,6 +12,7 @@ module.exports = class cookies extends command {
   }
 
   async run(message, args) {
+    if (!message.author.settings.cookies || !message.author.settings.last) message.author.settings = this.client.config.authorSettings;
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if (!member) {
       message.channel.send(message.embed()

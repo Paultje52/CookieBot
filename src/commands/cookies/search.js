@@ -11,6 +11,7 @@ module.exports = class search extends command {
   }
 
   async run(message) {
+    if (!message.author.settings.cookies || !message.author.settings.last) message.author.settings = this.client.config.authorSettings;
     if (message.author.settings.last.search && message.author.settings.last.search > Date.now() && Math.round((message.author.settings.last.search-Date.now())/1000/60) >= 1) return message.channel.send(`Please wait ${Math.round((message.author.settings.last.search-Date.now())/1000/60)} minutes before searching again!`);
     message.author.settings.last.search = Date.now()+1000*60*60;
     this.client.db.set(message.author.dbId, message.author.settings);
